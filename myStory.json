@@ -1,49 +1,49 @@
 {
     "Title": "Campus Life on the West Side",
     "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Kresge",
+    "InitialLocation": "Rock",
     "Locations": {
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
+        "Rock": {
+            "Body": "This is a Rock, its just a Rock",
             "Choices": [
                 {
                     "Text": "South",
-                    "Target": "Porter"
+                    "Target": "Bridge"
                 }
             ]
         },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
+        "Bridge": {
+            "Body": "This is a bridge , there are rocks under it.",
             "Choices": [
                 {
                     "Text": "North",
-                    "Target": "Kresge"
+                    "Target": "Rock"
                 },
                 {
                     "Text": "South",
-                    "Target": "Rachel Carson"
+                    "Target": "Cave"
                 }
             ]
         },
-        "Rachel Carson": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
+        "Cave": {
+            "Body": "This is a cave, very dark and it smells",
             "Choices": [
                 {
                     "Text": "North",
-                    "Target": "Porter"
+                    "Target": "Bridge"
                 },
                 {
                     "Text": "South",
-                    "Target": "Oakes"
+                    "Target": "InsideCave"
                 }
             ]
         },
-        "Oakes": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
+        "InsideCave": {
+            "Body": "You are inside the cave, the air here is thin.",
             "Choices": [
                 {
                     "Text": "North",
-                    "Target": "Rachel Carson"
+                    "Target": "Cave"
                 },
                 {
                     "Text": "South",
@@ -52,7 +52,7 @@
             ]
         },
         "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
+            "Body": "You fell in a hole and you cant get out. Sucks for you, you have died."
         }
     }
 }
