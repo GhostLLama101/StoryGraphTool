@@ -1,58 +1,98 @@
 {
-    "Title": "Campus Life on the West Side",
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Rock",
+    "Title": "The Dam",
+    "Credits": "Created by Joseph Dadlez (jdadlez@ucsc.edu).",
+    "InitialLocation": "Start",
     "Locations": {
-        "Rock": {
-            "Body": "This is a Rock, its just a Rock",
+        "Start": {
+            "Body": "This is the start",
             "Choices": [
                 {
-                    "Text": "South",
-                    "Target": "Bridge"
+                    "Text": "The Dam",
+                    "Target": "Dam"
                 }
             ]
         },
-        "Bridge": {
-            "Body": "This is a bridge , there are rocks under it.",
+        "Dam": {
+            "Body": "This is the Dam , Nevada is Right and Arazon is left.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Rock"
+                    "Text": "left",
+                    "Target": "Arazona_Lounge"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Cave"
-                }
-            ]
-        },
-        "Cave": {
-            "Body": "This is a cave, very dark and it smells",
-            "Choices": [
-                {
-                    "Text": "North",
-                    "Target": "Bridge"
+                    "Text": "right",
+                    "Target": "Nevada_Lounge"
                 },
                 {
-                    "Text": "South",
-                    "Target": "InsideCave"
+                    "Text": "the end",
+                    "Target":"The_end"
                 }
             ]
         },
-        "InsideCave": {
-            "Body": "You are inside the cave, the air here is thin.",
+        "Nevada_Lounge": {
+            "Nevada_Lounge": "This is the Nevada_Lounge",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Cave"
+                    "Text": "Dam",
+                    "Target": "Dam"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Beyond"
+                    "Text": "electrical Room",
+                    "Target": "N_electrical"
                 }
             ]
         },
-        "Beyond": {
-            "Body": "You fell in a hole and you cant get out. Sucks for you, you have died."
+        "N_electrical": {
+            "Body": "You are in electrical",
+            "Choices": [
+                {
+                    "Text": "Nevada_Lounge",
+                    "Target": "Nevada_Lounge"
+                },
+                {
+                    "Text": "Valve_house",
+                    "Target": "Valve_house"
+                }
+            ]
+        },
+        "Valve_house": {
+            "Body": "You are in the valve house for Nevada"
+        },
+        
+        "Arazona_Lounge": {
+            "Body": "You are in the Arazona_Lounge",
+            "Choices": [
+                {
+                    "Text": "Dam",
+                    "Target": "Dam"
+                },
+                {
+                    "Text": "electrical Room",
+                    "Target": "A_electrical"
+                }
+            ]
+        },
+        "A_electrical": {
+            "Body": "You are in electrical",
+            "Choices": [
+                {
+                    "Text": "Arazona_Lounge",
+                    "Target": "Arazona_Lounge"
+                },
+                {
+                    "Text": "Valve_house",
+                    "Target": "A_Valve_house"
+                }
+            ]
+        },
+        "A_Valve_house": {
+            "Body": "You are in the valve house for Arazona"
+        },
+
+        "The_end":{
+            "Body" :"You made it to the end"
         }
+        
     }
+        
 }
