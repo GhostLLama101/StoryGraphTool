@@ -56,7 +56,14 @@
             ]
         },
         "Valve_house": {
-            "Body": "You are in the valve house for Nevada"
+            "Body": "You are in the valve house for Nevada",
+            "Choices": [
+               
+                {
+                    "Text": "N_electrical",
+                    "Target": "N_electrical"
+                }
+            ]
         },
         
         "Arazona_Lounge": {
@@ -86,7 +93,15 @@
             ]
         },
         "A_Valve_house": {
-            "Body": "You are in the valve house for Arazona"
+            "Body": "You are in the valve house for Arazona",
+            "Choices": [
+               
+                {
+                    "Text": "A_electrical",
+                    "Target": "A_electrical"
+                }
+            ]
+
         },
 
         "The_end":{
