@@ -70,7 +70,6 @@ class ValveRoom extends Location {
             return;
         }
 
-        //this.engine.show(locationData.Body);
 
         // Only show "Turn valve" if it hasn't been turned yet
         if ((this.locationKey === "Valve_house" && !this.engine.nevadaValve) ||
