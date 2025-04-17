@@ -13,7 +13,7 @@
             ]
         },
         "Dam": {
-            "Body": "This is the Dam , Nevada is Right and Arazon is left.",
+            "Body": "This is the Dam. Nevada is to the Right and Arizona is to the Left.",
             "Choices": [
                 {
                     "Text": "left",
@@ -23,15 +23,14 @@
                     "Text": "right",
                     "Target": "Nevada_Lounge"
                 },
-                
                 {
                     "Text": "the end",
-                    "Target":"The_end"
+                    "Target": "The_end"
                 }
             ]
         },
         "Nevada_Lounge": {
-            "Nevada_Lounge": "This is the Nevada_Lounge",
+            "Body": "This is the Nevada Lounge.",
             "Choices": [
                 {
                     "Text": "Dam",
@@ -44,31 +43,30 @@
             ]
         },
         "N_electrical": {
-            "Body": "You are in electrical",
+            "Body": "You are in the Nevada electrical room.",
             "Choices": [
                 {
-                    "Text": "Nevada_Lounge",
+                    "Text": "Nevada Lounge",
                     "Target": "Nevada_Lounge"
                 },
                 {
-                    "Text": "Valve_house",
+                    "Text": "Valve House",
                     "Target": "Valve_house"
                 }
             ]
         },
         "Valve_house": {
-            "Body": "You are in the valve house for Nevada",
+            "Body": "You are in the valve house for Nevada. There's a large valve that looks like it controls water flow.",
+            "crank": true,
             "Choices": [
-               
                 {
-                    "Text": "N_electrical",
+                    "Text": "Back to electrical room",
                     "Target": "N_electrical"
                 }
             ]
         },
-        
         "Arizona_Lounge": {
-            "Body": "You are in the Arazona_Lounge",
+            "Body": "You are in the Arizona Lounge.",
             "Choices": [
                 {
                     "Text": "Dam",
@@ -81,34 +79,30 @@
             ]
         },
         "A_electrical": {
-            "Body": "You are in electrical",
+            "Body": "You are in the Arizona electrical room.",
             "Choices": [
                 {
-                    "Text": "Arizona_Lounge",
+                    "Text": "Arizona Lounge",
                     "Target": "Arizona_Lounge"
                 },
                 {
-                    "Text": "Valve_house",
+                    "Text": "Valve House",
                     "Target": "A_Valve_house"
                 }
             ]
         },
         "A_Valve_house": {
-            "Body": "You are in the valve house for Arazona",
+            "Body": "You are in the valve house for Arizona. There's a large valve that looks like it controls water flow.",
+            "crank": true,
             "Choices": [
-               
                 {
-                    "Text": "A_electrical",
+                    "Text": "Back to electrical room",
                     "Target": "A_electrical"
                 }
             ]
-
         },
-
-        "The_end":{
-            "Body" :"You made it to the end"
+        "The_end": {
+            "Body": "With both valves turned, the water flows properly through the dam. You've successfully completed your maintenance task. Congratulations!"
         }
-        
     }
-        
 }
