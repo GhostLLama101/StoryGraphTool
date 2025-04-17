@@ -17,12 +17,13 @@
             "Choices": [
                 {
                     "Text": "left",
-                    "Target": "Arazona_Lounge"
+                    "Target": "Arizona_Lounge"
                 },
                 {
                     "Text": "right",
                     "Target": "Nevada_Lounge"
                 },
+                
                 {
                     "Text": "the end",
                     "Target":"The_end"
@@ -66,7 +67,7 @@
             ]
         },
         
-        "Arazona_Lounge": {
+        "Arizona_Lounge": {
             "Body": "You are in the Arazona_Lounge",
             "Choices": [
                 {
@@ -83,8 +84,8 @@
             "Body": "You are in electrical",
             "Choices": [
                 {
-                    "Text": "Arazona_Lounge",
-                    "Target": "Arazona_Lounge"
+                    "Text": "Arizona_Lounge",
+                    "Target": "Arizona_Lounge"
                 },
                 {
                     "Text": "Valve_house",
