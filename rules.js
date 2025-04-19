@@ -28,10 +28,16 @@ class Location extends Scene {
             return;
         }
 
+        if(locationData.radio) {
+            // This is a radio location
+            this.engine.gotoScene(Radio, key);
+            return;
+        }
+
         // For Dam location, check if both valves are turned before allowing "the end" option
         if(key === "Dam") {
             for(let choice of locationData.Choices) {
-                if(choice.Text === "the end") {
+                if(choice.Text === "Leave") {
                     // Only show "the end" option if both valves are turned
                     if(this.engine.nevadaValve && this.engine.arizonaValve) {
                         this.engine.addChoice(choice.Text, choice);
@@ -45,7 +51,7 @@ class Location extends Scene {
                 this.engine.addChoice(choice.Text, choice);
             }
         } else {
-            this.engine.addChoice("The end.");
+            this.engine.addChoice("Leave Dam");
         }
 
     }
@@ -56,6 +62,64 @@ class Location extends Scene {
             this.engine.gotoScene(Location, choice.Target);
         } else {
             this.engine.gotoScene(End);
+        }
+    }
+}
+// this i for the radio in the lounges
+class Radio extends Location {
+    create(key) {
+        this.locationKey = key;
+        let locationData = this.engine.storyData.Locations[key];
+
+        if (!locationData) {
+            console.error("Location data not found for key:", key);
+            return;
+        }
+
+         // Only show "Turn valve" if it hasn't been turned yet
+        if ((this.locationKey === "Nevada_Lounge" && !this.engine.nevadaValve) ||
+            (this.locationKey === "Arizona_Lounge" && !this.engine.arizonaValve)) {
+            this.engine.addChoice("Turn on Radio", { isValve: true });
+        }
+
+        // Add back options
+        if (locationData.Choices) {
+            for (let choice of locationData.Choices) {
+                this.engine.addChoice(choice.Text, choice);
+            }
+        }
+    }
+
+    handleChoice(choice) {
+        if (!choice) {
+            console.error("Received undefined choice");
+            return;
+        }
+
+        if (choice.isValve) {
+            // Handle valve turning
+            if (this.locationKey === "Nevada_Lounge") {
+                this.engine.nevadaRadio = true;
+                this.engine.show("You are listening to Dam FM hopefull this makes you work harder");
+            } else if (this.locationKey === "Arizona_Lounge") {
+                this.engine.arizonaRadio = true;
+                this.engine.show("You are listing to Dam FM now playing your bosses favorite 'get back to work!'");
+            }
+
+            // Instead of clearing choices, just recreate the scene
+            this.create(this.locationKey);
+
+            if (this.engine.nevadaRadio && this.engine.arizonaRadio) {
+                this.engine.show("............. Stop listing to the radio and get back to work");
+            }
+        }
+        else if (choice.Text) {
+            this.engine.show("> " + choice.Text);
+            this.engine.gotoScene(Location, choice.Target);
+        }
+        else {
+            console.error("Invalid choice:", choice);
+            this.engine.gotoScene(Location, "Dam");
         }
     }
 }
@@ -105,7 +169,7 @@ class ValveRoom extends Location {
             this.create(this.locationKey);
 
             if (this.engine.nevadaValve && this.engine.arizonaValve) {
-                this.engine.show("Both valves are now turned. You can now finish the journey at the Dam.");
+                this.engine.show("Both valves are now turned. You did your job and you should leave. Go back to the Dam and get out.");
             }
         }
         else if (choice.Text) {

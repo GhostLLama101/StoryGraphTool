@@ -4,7 +4,7 @@
     "InitialLocation": "Start",
     "Locations": {
         "Start": {
-            "Body": "This is the start",
+            "Body": "Forman: You are tasked with fixing this antique.\n Do it quick other wise your not leaving.",
             "Choices": [
                 {
                     "Text": "The Dam",
@@ -24,13 +24,14 @@
                     "Target": "Nevada_Lounge"
                 },
                 {
-                    "Text": "the end",
+                    "Text": "Leave",
                     "Target": "The_end"
                 }
             ]
         },
         "Nevada_Lounge": {
             "Body": "This is the Nevada Lounge.",
+            "radio": true,
             "Choices": [
                 {
                     "Text": "Dam",
@@ -67,6 +68,7 @@
         },
         "Arizona_Lounge": {
             "Body": "You are in the Arizona Lounge.",
+            "radio": true,
             "Choices": [
                 {
                     "Text": "Dam",
@@ -102,7 +104,7 @@
             ]
         },
         "The_end": {
-            "Body": "With both valves turned, the water flows properly through the dam. You've successfully completed your maintenance task. Congratulations!"
+            "Body": "With both valves turned, the water flows properly through the dam. You've successfully completed your maintenance task. Get lost"
         }
     }
 }
